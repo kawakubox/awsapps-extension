@@ -2,5 +2,11 @@
   "name": "AWS Apps Extension",
   "description": "Extension of AWS SSO apps page",
   "version": "1.0",
-  "manifest_version": 3
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches": ["https://*.awsapps.com/*"],
+      "js": ["content.js"]
+    }
+  ]
 }
