@@ -6,7 +6,7 @@
   "content_scripts": [
     {
       "matches": ["https://*.awsapps.com/*"],
-      "js": ["content.js"]
+      "js": ["dist/content.js"]
     }
   ]
 }
