@@ -3,6 +3,9 @@
   "description": "Extension of AWS SSO apps page",
   "version": "1.0",
   "manifest_version": 3,
+  "background": {
+    "service_worker": "dist/background.js"
+  },
   "content_scripts": [
     {
       "matches": ["https://*.awsapps.com/*"],
@@ -10,6 +13,7 @@
     }
   ],
   "permissions": [
-    "storage"
+    "storage",
+    "tabs"
   ]
 }
