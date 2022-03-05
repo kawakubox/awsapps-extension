@@ -1,8 +1,10 @@
 const bgcolor = "lightpink";
 
-const sleep = new Promise(resolve => setTimeout(resolve, 1000))
+function sleep(timeout: number): Promise<any> {
+  return new Promise(resolve => setTimeout(resolve, timeout))
+}
 
-sleep.then(draw);
+sleep(1000).then(draw);
 
 function draw() {
   const portalApps = document.getElementsByTagName("portal-application");
