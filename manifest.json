@@ -8,5 +8,8 @@
       "matches": ["https://*.awsapps.com/*"],
       "js": ["dist/content.js"]
     }
+  ],
+  "permissions": [
+    "storage"
   ]
 }

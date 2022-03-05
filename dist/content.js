@@ -19,12 +19,15 @@ function draw() {
 function storeAccounts() {
     const portalApps = document.getElementsByTagName("portal-application");
     portalApps[0].addEventListener("click", (event) => {
-        const instanceSections = document.getElementsByClassName("instance-section");
-        if (instanceSections.length) {
-            const accounts = AwsAccountDict.parse(instanceSections);
-            console.log(accounts);
-            // LocalStorage に格納する
-        }
+        sleep(200).then((resolve) => {
+            const instanceSections = document.getElementsByClassName("instance-section");
+            if (instanceSections.length) {
+                const accounts = AwsAccountDict.parse(instanceSections);
+                // LocalStorage に格納する
+                chrome.storage.local.set({ awsAccounts: accounts }, () => {
+                });
+            }
+        });
     });
 }
 class AwsAccount {
