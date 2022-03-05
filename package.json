@@ -1,5 +1,9 @@
 {
   "devDependencies": {
+    "@types/chrome": "^0.0.179",
     "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "@extend-chrome/storage": "^1.5.0"
   }
 }

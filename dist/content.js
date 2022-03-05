@@ -2,7 +2,9 @@ const bgcolor = "lightpink";
 function sleep(timeout) {
     return new Promise(resolve => setTimeout(resolve, timeout));
 }
-sleep(1000).then(draw);
+sleep(1000)
+    .then(draw)
+    .then(storeAccounts);
 function draw() {
     const portalApps = document.getElementsByTagName("portal-application");
     portalApps[0].addEventListener("click", (event) => {
@@ -13,4 +15,35 @@ function draw() {
             }
         });
     });
+}
+function storeAccounts() {
+    const portalApps = document.getElementsByTagName("portal-application");
+    portalApps[0].addEventListener("click", (event) => {
+        sleep(200).then((resolve) => {
+            const instanceSections = document.getElementsByClassName("instance-section");
+            if (instanceSections.length) {
+                const accounts = AwsAccountDict.parse(instanceSections);
+                // LocalStorage に格納する
+                chrome.storage.local.set({ awsAccounts: accounts }, () => {
+                });
+            }
+        });
+    });
+}
+class AwsAccount {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+}
+class AwsAccountDict {
+    static parse(elements) {
+        let dict = new AwsAccountDict();
+        Array.prototype.forEach.call(elements, (element) => {
+            const accountName = element.getElementsByClassName("name")[0].textContent;
+            const accountId = element.getElementsByClassName("accountId")[0].textContent.substring(1);
+            dict[accountId] = new AwsAccount(accountId, accountName);
+        });
+        return dict;
+    }
 }
