@@ -4,13 +4,14 @@ function sleep(timeout: number): Promise<any> {
     return new Promise(resolve => setTimeout(resolve, timeout))
 }
 
-sleep(1000)
-    .then(draw)
-    .then(storeAccounts);
+if (document.getElementsByTagName("portal-application").length) {
+    sleep(1000)
+        .then(draw)
+        .then(storeAccounts);
+}
 
 function draw() {
     const portalApps = document.getElementsByTagName("portal-application");
-
     portalApps[0].addEventListener("click", (event) => {
         const elements = document.getElementsByClassName("name");
         Array.prototype.forEach.call(elements, (element) => {

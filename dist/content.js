@@ -2,9 +2,11 @@ const bgcolor = "lightpink";
 function sleep(timeout) {
     return new Promise(resolve => setTimeout(resolve, timeout));
 }
-sleep(1000)
-    .then(draw)
-    .then(storeAccounts);
+if (document.getElementsByTagName("portal-application").length) {
+    sleep(1000)
+        .then(draw)
+        .then(storeAccounts);
+}
 function draw() {
     const portalApps = document.getElementsByTagName("portal-application");
     portalApps[0].addEventListener("click", (event) => {
