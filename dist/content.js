@@ -2,10 +2,19 @@ const bgcolor = "lightpink";
 function sleep(timeout) {
     return new Promise(resolve => setTimeout(resolve, timeout));
 }
-if (document.getElementsByTagName("portal-application").length) {
-    sleep(1000)
-        .then(draw)
-        .then(storeAccounts);
+sleep(1000)
+    .then(findElement)
+    .then(draw)
+    .then(storeAccounts);
+function findElement() {
+    return new Promise((resolve, reject) => {
+        if (document.getElementsByTagName("portal-application").length) {
+            resolve("Element is exists.");
+        }
+        else {
+            reject("Element is not exists.");
+        }
+    });
 }
 function draw() {
     const portalApps = document.getElementsByTagName("portal-application");
