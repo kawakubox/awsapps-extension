@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.2] - 2022-03-10
+
+### Fixed
+* Change timing that 'portal-application' tag existence check by @kawakubox in https://github.com/kawakubox/awsapps-extension/pull/14
+
+**Full Changelog**: https://github.com/kawakubox/awsapps-extension/compare/1.1.1...1.1.2
+
 ## [1.1.1] - 2022-03-08
 ### Added
 - Create LICENSE by @kawakubox in https://github.com/kawakubox/awsapps-extension/pull/11
@@ -36,6 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 //脆弱性に関する場合。
 
+[1.1.2]: https://github.com/kawakubox/awsapps-extension/releases/tag/1.1.2
 [1.1.1]: https://github.com/kawakubox/awsapps-extension/releases/tag/1.1.1
 [1.1.0]: https://github.com/kawakubox/awsapps-extension/releases/tag/1.1.0
 [1.0.0]: https://github.com/kawakubox/awsapps-extension/commits/1.0.0
