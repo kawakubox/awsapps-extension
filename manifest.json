@@ -18,6 +18,7 @@
       ]
     }
   ],
+  "options_page": "assets/option.html",
   "permissions": [
     "storage",
     "tabs"
